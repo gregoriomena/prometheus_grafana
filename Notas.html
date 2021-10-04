@@ -28,6 +28,7 @@
 					<li><a href="#sec17">7. Tipos de Medidas</a></li>
 					<li><a href="#sec18">8. Convención de nombres en los sistemas de monitoreo</a></li>
 					<li><a href="#sec19">9. Uso de Counters</a></li>
+					<li><a href="#sec110">10. Uso de Timers</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -84,6 +85,10 @@
 			<h3>1.9. Uso de Counters</h3>
 			Un Counter reporta simplemente un contador sobre la propiedad específica de una aplicación. A continuación un ejemplo: meterRegistry.counter("devs4j.students", "profile","frontend").increment();
 			<br /><a href="https://micrometer.io/docs/concepts#_counters">Documentación</a>
+		</span>
+		<span id="sec110">
+			<h3>1.10. Uso de Timers</h3>
+			Para medir latencias o frecuencia de eventos puedes utilizar Timers. Igual que los counters, se pueden crear a través de registry o con un builder. <a href="https://micrometer.io/docs/concepts#_timers">Documentación</a>
 		</span>
 	</body>
 </html>

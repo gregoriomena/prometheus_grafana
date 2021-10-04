@@ -1,8 +1,11 @@
 package com.gmr.metrics;
 
+import java.util.concurrent.TimeUnit;
+
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Metrics;
+import io.micrometer.core.instrument.Timer;
 import io.micrometer.core.instrument.composite.CompositeMeterRegistry;
 import io.micrometer.core.instrument.simple.SimpleMeterRegistry;
 
@@ -35,6 +38,20 @@ public class MetricsApplication {
 		other();
 		
 		counterBuilderExample(registry);
+		
+		System.out.printf("\nTimer...");
+		
+		Timer timer = registry.timer("execution.timer");
+		timer.record(() -> {
+			for (int i = 0; i < 100; i++) {
+				System.out.printf(" " + i);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {}
+			}
+		});
+		
+		System.out.printf("\nTiempo invertido: %f", timer.totalTime(TimeUnit.MILLISECONDS));
 	}
 
 	private static void counterBuilderExample(MeterRegistry registry) {
