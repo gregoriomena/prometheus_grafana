@@ -1,6 +1,10 @@
 <html>
 	<head>
 		<style>
+			img{
+				border: 1px solid #555;
+				margin-top: 5px;
+			}
 		</style>
 	</head>
 	<body>
@@ -49,6 +53,8 @@
 				<ul>
 					<li>19. Instalación de Docker</li>
 					<li><a href="#sec320">20. Descargando Prometheus utilizando Docker</a></li>
+					<li><a href="#sec321">21. Conectando la imagen de Prometheus a nuestra aplicación</a></li>
+					<li>22. Probando la integración con Prometheus</li>
 				</ul>
 			</li>
 		</ul>
@@ -144,6 +150,14 @@
 			<h3>3.20. Descargando Prometheus utilizando Docker</h3>
 			Si buscamos Prometheus en <a href="https://hub.docker.com/r/prom/prometheus/">Docker Hub</a> encontraremos las instrucciones para instalarlo desde Docker: docker pull prom/prometheus
 			<br />En la <a href="https://prometheus.io/docs/prometheus/latest/installation/">documentación de Prometheus</a> encontramos cómo poder ejecutarlo: docker run -p 9090:9090 prom/prometheus
+		</span>
+		<span id="sec321">
+			<h3>3.21. Conectando la imagen de Prometheus a nuestra aplicación</h3>
+			En el servidor de Prometheus (http://localhost:9090/) si vamos a Status->Configuration podremos obtener la configuración del servidor.
+			Copiando esta configuración, podemos crear el fichero prometheus.yml y adaptarlo para apuntar a nuestro servidor.
+			Teniendo este fichero, podemos arrancar Prometheus usando dicho fichero: docker run -p 9090:9090 -v C:/devel/fonts/cursoprometheusgrafana/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus -d
+			Al arrancar, no encontraremos nuestra métricas, primero debemos invocar al endpoint (por ejemplo http://localhost:8080/gmenar/metrics/timermetodo) y una vez ejecutado al menos una vez, ya aparecerá en Prometheus
+			<br /><img src="./notas/curso06.png" />
 		</span>
 	</body>
 </html>
