@@ -18,7 +18,20 @@
 		<ul>
 			<li>
 				Sección 1: Introducción a Micrometer
+				<ul>
+					<li>1. Introducción</li>
+					<li><a href="sec12">2. Características de un sistema de monitoreo</a></li>
+				</ul>
 			</li>
 		</ul>
+		
+		<span id="sec12">
+			<h3>1.2 - Características de un sistema de monitoreo</h3>
+			<ul>
+			<li><b>Dimensionamiento:</b> Existen sistemas jerárquicos (podremos navegar a través de las métricas y existe una dependencia entre ellas) y dimensional, las métricas se aplanan y no existe una jerarquía pero tienen tags que 
+			permiten clasificar la información. Por ejemplo, si tengo una métrica que es el sueldo promedio, aplicaría a todos los empleados, pero a esa métrica le puedo agregar un tag que sea el puesto.</li>
+			<li><b>Rate agregation:</b> Cuando se simplifica un conjunto de datos, por ejemplo agrupándolos (promedio, suma, ...) en un periodo de tiempo.</li>
+			<li><b>Publishing:</b> Algunos sistemas esperan consumir métricas desde las aplicaciones y otros esperan que se publiquen de forma regular. (Prometheus es del tipo que las consume)</li>
+		</span>
 	</body>
 </html>
