@@ -25,6 +25,7 @@
 					<li><a href="#sec14">4. Uso del MeterRegistry</a></li>
 					<li><a href="#sec15">5. Uso del CompositeMeterRegistry</a></li>
 					<li><a href="#sec16">6. Uso del GlobalRegistry</a></li>
+					<li><a href="#sec17">7. Tipos de Medidas</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -58,6 +59,20 @@
 		<span id="sec16">
 			<h3>1.6. Uso del GlobalRegistry</h3>
 			Micrometer provee un registro global static, para acceder a el puedes utilizar. Gracias a esto evitamos tener que crear el MeterRegistry en cada punto de la aplicación donde se quiera usar.
+		</span>
+		<span id="sec17">
+			<h3>1.7. Tipos de Medidas</h3>
+			Micrometer viene con un conjunto de medidas soportadas entre las que se encuentran:
+			<ul>
+				<li>Timer</li>
+				<li>Counter</li>
+				<li>Gauge</li>
+				<li>DistributionSummary</li>
+				<li>LongTaskTimer</li>
+				<li>FunctionCounter</li>
+				<li>TimeGauge</li>
+			</ul>	
+			Una medida es identificada por su nombre y dimensión. Se utiliza el término dimensión y tags de forma indistinta. Dimensiones permiten a un nombre de métrica en particular ser partida para analizar los datos a profundidad.
 		</span>
 	</body>
 </html>
