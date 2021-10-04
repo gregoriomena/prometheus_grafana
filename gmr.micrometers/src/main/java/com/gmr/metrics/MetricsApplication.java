@@ -1,8 +1,12 @@
 package com.gmr.metrics;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Metrics;
 import io.micrometer.core.instrument.Timer;
@@ -52,6 +56,13 @@ public class MetricsApplication {
 		});
 		
 		System.out.printf("\nTiempo invertido: %f", timer.totalTime(TimeUnit.MILLISECONDS));
+		
+		List<String> list = new ArrayList<>(4);
+		Gauge gauge = Gauge.builder("list.size", list, List::size).register(registry);
+		System.out.printf("\nTamaño de la lista %f", gauge.value());
+		
+		list.addAll(Arrays.asList("a", "b", "c", "d", "e", "f"));
+		System.out.printf("\nTamaño de la lista %f", gauge.value());
 	}
 
 	private static void counterBuilderExample(MeterRegistry registry) {
