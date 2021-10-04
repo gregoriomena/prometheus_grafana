@@ -27,6 +27,7 @@
 					<li><a href="#sec16">6. Uso del GlobalRegistry</a></li>
 					<li><a href="#sec17">7. Tipos de Medidas</a></li>
 					<li><a href="#sec18">8. Convención de nombres en los sistemas de monitoreo</a></li>
+					<li><a href="#sec19">9. Uso de Counters</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -78,6 +79,11 @@
 		<span id="sec18">
 			<h3>1.8. Convención de nombres en los sistemas de monitoreo</h3>
 			Micrometer emplea una convención de nombres que utiliza minúsculas separadas con un '.' punto. Diferentes sistemas de monitoreo tienen diferentes sistemas de nombrado por lo que cada implementación de micrometer viene con un transformador a la estructura recomendada, puedes sobreescribir la convención de nombres por defaul implementando la interfaz NamingConvention
+		</span>
+		<span id="sec19">
+			<h3>1.9. Uso de Counters</h3>
+			Un Counter reporta simplemente un contador sobre la propiedad específica de una aplicación. A continuación un ejemplo: meterRegistry.counter("devs4j.students", "profile","frontend").increment();
+			<br /><a href="https://micrometer.io/docs/concepts#_counters">Documentación</a>
 		</span>
 	</body>
 </html>

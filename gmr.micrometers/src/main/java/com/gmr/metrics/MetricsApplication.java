@@ -33,6 +33,23 @@ public class MetricsApplication {
 		System.out.printf("Número de empleados %f\n", counter.count());
 		
 		other();
+		
+		counterBuilderExample(registry);
+	}
+
+	private static void counterBuilderExample(MeterRegistry registry) {
+		
+		Counter counter = Counter
+				.builder("com.gmr")
+			    .description("Contador de pruebas para el builder")
+			    .tags("test", "Métricas con Micrometer")
+			    .register(registry);
+		
+		counter.increment();
+		counter.increment(175);
+
+		System.out.printf("\nValor contador con Builder %f", counter.count());
+		
 	}
 
 	private static void other() {
