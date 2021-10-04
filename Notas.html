@@ -26,6 +26,7 @@
 					<li><a href="#sec15">5. Uso del CompositeMeterRegistry</a></li>
 					<li><a href="#sec16">6. Uso del GlobalRegistry</a></li>
 					<li><a href="#sec17">7. Tipos de Medidas</a></li>
+					<li><a href="#sec18">8. Convención de nombres en los sistemas de monitoreo</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -73,6 +74,10 @@
 				<li>TimeGauge</li>
 			</ul>	
 			Una medida es identificada por su nombre y dimensión. Se utiliza el término dimensión y tags de forma indistinta. Dimensiones permiten a un nombre de métrica en particular ser partida para analizar los datos a profundidad.
+		</span>
+		<span id="sec18">
+			<h3>1.8. Convención de nombres en los sistemas de monitoreo</h3>
+			Micrometer emplea una convención de nombres que utiliza minúsculas separadas con un '.' punto. Diferentes sistemas de monitoreo tienen diferentes sistemas de nombrado por lo que cada implementación de micrometer viene con un transformador a la estructura recomendada, puedes sobreescribir la convención de nombres por defaul implementando la interfaz NamingConvention
 		</span>
 	</body>
 </html>
