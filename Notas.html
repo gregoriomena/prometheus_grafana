@@ -40,6 +40,7 @@
 					<li>14. Analizando las métricas que expone Spring</li>
 					<li><a href="#sec215">15. Creando una métrica personalizada en Spring</a></li>
 					<li><a href="#sec216">16. PrometheusMeterRegistry y el formato de Prometheuss</a></li>
+					<li><a href="#sec217">17. Uso de Timer con Spring framework</a></li>
 				</ul>
 				
 			</li>
@@ -127,6 +128,10 @@
 		<span id="sec216">
 			<h3>2.16. PrometheusMeterRegistry y el formato de Prometheuss</h3>
 			Si añado prometheus a la lista de métricas que se exponen (en el application.properties), y accedo a http://localhost:8080/actuator/prometheus se ve que el formato de las métricas es diferente. En /actuator/metrics/ veremos el formato de Metrics estándar, pero con prometheus ya vemos su propio formato.
+		</span>
+		<span id="sec217">
+			<h3>2.17. Uso de Timer con Spring framework</h3>
+			Podremos medir el tiempo de un trozo de código concreto con timer.record() o de todo un método con @Timed("nombre.metrica"). Esta anotación también se podría usar a nivel de clase.
 		</span>
 	</body>
 </html>
