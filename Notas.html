@@ -23,6 +23,7 @@
 					<li><a href="#sec12">2. Características de un sistema de monitoreo</a></li>
 					<li>3. Creación de un proyecto simple de Micrometer</li>
 					<li><a href="#sec14">4. Uso del MeterRegistry</a></li>
+					<li><a href="#sec15">5. Uso del CompositeMeterRegistry</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -45,6 +46,13 @@
 			<br />
 			<br />
 			En aplicaciones basadas en Spring SimpleMeterRegistry es inyectado por default, si se incluye la dependencia de Prometheus el registry por default es PrometheusMeterRegistry
+		</span>
+		<span id="sec15">
+			<h3>1.5. Uso del CompositeMeterRegistry</h3>
+			Micrometer provee un CompositeMeterRegistry donde puedes agregar múltiples registros, permitiendo publicar métricas a más de un sistema de monitoreo de forma simultanea.
+			<br />
+			<br />
+			Podría ser una opción si por ejemplo se está migrando de un sistema a otro y mientras queremos publicar para ambos.
 		</span>
 	</body>
 </html>
