@@ -36,6 +36,7 @@
 				Sección 2: Análisis de una aplicación REST y el ecosistema de métricas
 				<ul>
 					<li><a href="#sec212">12. Creación de proyecto de Spring Framework con Micrometer</a></li>
+					<li><a href="#sec213">13. Habilitando endpoints de Actuator</a></li>
 				</ul>
 				
 			</li>
@@ -106,6 +107,15 @@
 			<h3>2.12. Creación de proyecto de Spring Framework con Micrometer</h3>
 			Creó un proyecto base con las siguientes dependencias <br />
 			<img src="./notas/curso01.png" />
+		</span>
+		<span id="sec213">
+			<h3>2.13. Habilitando endpoints de Actuator</h3>
+			Si arrancamos la aplicación base creada en el punto anterior, como se ha añadido la dependencia de Actuator, se podrá acceder a http://localhost:8080/actuator donde tendremos algunas métricas (por defecto, sólo si el servidor está activo)
+			<br />Añadiendo management.endpoints.web.exposure.include= en el applitacion.properties, podemos añadir más métricas: añadiremos health (que es la que tiene por defecto) y metrics.<br />
+			<br /><img src="./notas/curso02.png" />
+			<br /><img src="./notas/curso03.png" />
+			<br /><img src="./notas/curso04.png" />
+			<br /><img src="./notas/curso05.png" />
 		</span>
 	</body>
 </html>
