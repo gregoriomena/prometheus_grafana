@@ -20,8 +20,9 @@
 				Sección 1: Introducción a Micrometer
 				<ul>
 					<li>1. Introducción</li>
-					<li><a href="sec12">2. Características de un sistema de monitoreo</a></li>
+					<li><a href="#sec12">2. Características de un sistema de monitoreo</a></li>
 					<li>3. Creación de un proyecto simple de Micrometer</li>
+					<li><a href="#sec14">4. Uso del MeterRegistry</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -33,6 +34,17 @@
 			permiten clasificar la información. Por ejemplo, si tengo una métrica que es el sueldo promedio, aplicaría a todos los empleados, pero a esa métrica le puedo agregar un tag que sea el puesto.</li>
 			<li><b>Rate agregation:</b> Cuando se simplifica un conjunto de datos, por ejemplo agrupándolos (promedio, suma, ...) en un periodo de tiempo.</li>
 			<li><b>Publishing:</b> Algunos sistemas esperan consumir métricas desde las aplicaciones y otros esperan que se publiquen de forma regular. (Prometheus es del tipo que las consume)</li>
+			</ul>
+		</span>
+		<span id="sec14">
+			<h3>1.4. Uso del MeterRegistry</h3>
+			Una Medida es la interfaz para recolectar un conjunto de datos sobre tu aplicación. En Micrometer una medida se crea y mantiene en un MeterRegistry. Cada sistema de monitoreo tiene su propia implementación del MeterRegistry (por ejemplo, Prometheus tiene la suya).
+			<br />
+			<br />
+			La implementación de Micrometer del MeterRegistry se llama SimpleMeterRegistry, la cual mantiene el último valor de cada medida en memoria y no exporta la información a ningún lugar. Ideal en caso de que no tengas alguna preferencia con un sistema de monitoreo (SimpleMeterRegistry es como el log4j en los logs)
+			<br />
+			<br />
+			En aplicaciones basadas en Spring SimpleMeterRegistry es inyectado por default, si se incluye la dependencia de Prometheus el registry por default es PrometheusMeterRegistry
 		</span>
 	</body>
 </html>
