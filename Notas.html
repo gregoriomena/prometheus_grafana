@@ -55,6 +55,7 @@
 					<li><a href="#sec320">20. Descargando Prometheus utilizando Docker</a></li>
 					<li><a href="#sec321">21. Conectando la imagen de Prometheus a nuestra aplicación</a></li>
 					<li>22. Probando la integración con Prometheus</li>
+					<li><a href="#sec323">23. Leyendo las métricas personalizadas de Spring desde</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -158,6 +159,15 @@
 			Teniendo este fichero, podemos arrancar Prometheus usando dicho fichero: docker run -p 9090:9090 -v C:/devel/fonts/cursoprometheusgrafana/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus -d
 			Al arrancar, no encontraremos nuestra métricas, primero debemos invocar al endpoint (por ejemplo http://localhost:8080/gmenar/metrics/timermetodo) y una vez ejecutado al menos una vez, ya aparecerá en Prometheus
 			<br /><img src="./notas/curso06.png" />
+		</span>
+		<span id="sec323">
+			<h3>3.23. Leyendo las métricas personalizadas de Spring desde</h3>
+			Si mostramos una métrica en Prometheus, esta irá mostrando los valores de forma acumulativa. Esto puede que no nos sea útil, por ejemplo si mi aplicación dejara de contestar no me enteraría porque me está mostrando el último valor.
+			<br />Por ejmplo, si muestro el contador que había implementado en Spring, veo que la gráfica va sumando:
+			<br /><img src="./notas/curso07.png" />
+			<br /><br />Si usamos la función rate (número de registros por unidad de tiempo) conseguimos resolver esto<br />
+			<br /><img src="./notas/curso08.png" />
+			<br /><br />Podríamos usar increase en vez de rate, si lo que queremos ver es el valor real en ese periodo y no un ratio
 		</span>
 	</body>
 </html>
