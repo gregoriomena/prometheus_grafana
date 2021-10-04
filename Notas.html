@@ -39,6 +39,7 @@
 					<li><a href="#sec213">13. Habilitando endpoints de Actuator</a></li>
 					<li>14. Analizando las métricas que expone Spring</li>
 					<li><a href="#sec215">15. Creando una métrica personalizada en Spring</a></li>
+					<li><a href="#sec216">16. PrometheusMeterRegistry y el formato de Prometheuss</a></li>
 				</ul>
 				
 			</li>
@@ -119,9 +120,13 @@
 			<br /><img src="./notas/curso04.png" />
 			<br /><img src="./notas/curso05.png" />
 		</span>
-		<span id="sec213">
+		<span id="sec215">
 			<h3>2.15. Creando una métrica personalizada en Spring</h3>
 			Tras crear nuestra propia métrica, al acceder por primera vez a http://localhost:8080/actuator/metrics no la veremos, debemos acceder al menos una vez a la nueva métrica para que luego salga en este listado.
+		</span>
+		<span id="sec216">
+			<h3>2.16. PrometheusMeterRegistry y el formato de Prometheuss</h3>
+			Si añado prometheus a la lista de métricas que se exponen (en el application.properties), y accedo a http://localhost:8080/actuator/prometheus se ve que el formato de las métricas es diferente. En /actuator/metrics/ veremos el formato de Metrics estándar, pero con prometheus ya vemos su propio formato.
 		</span>
 	</body>
 </html>
