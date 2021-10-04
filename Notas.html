@@ -24,6 +24,7 @@
 					<li>3. Creación de un proyecto simple de Micrometer</li>
 					<li><a href="#sec14">4. Uso del MeterRegistry</a></li>
 					<li><a href="#sec15">5. Uso del CompositeMeterRegistry</a></li>
+					<li><a href="#sec16">6. Uso del GlobalRegistry</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -53,6 +54,10 @@
 			<br />
 			<br />
 			Podría ser una opción si por ejemplo se está migrando de un sistema a otro y mientras queremos publicar para ambos.
+		</span>
+		<span id="sec16">
+			<h3>1.6. Uso del GlobalRegistry</h3>
+			Micrometer provee un registro global static, para acceder a el puedes utilizar. Gracias a esto evitamos tener que crear el MeterRegistry en cada punto de la aplicación donde se quiera usar.
 		</span>
 	</body>
 </html>
