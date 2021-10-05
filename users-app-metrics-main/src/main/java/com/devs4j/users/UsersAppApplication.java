@@ -47,15 +47,19 @@ public class UsersAppApplication implements ApplicationRunner {
 			roleRepository.save(role);
 		}
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 100000; i++) {
 			User user = new User();
 			user.setUsername(faker.name().username());
 			user.setPassword(faker.dragonBall().character());
-			User created = repository.save(user);
-			UserInRole userInRole = new UserInRole(created, roles[new Random().nextInt(3)]);
-			log.info("USer created username {} password {} role {}", created.getUsername(), created.getPassword(),
-					userInRole.getRole().getName());
-			userInRoleRepository.save(userInRole);
+			try {
+				User created = repository.save(user);
+				UserInRole userInRole = new UserInRole(created, roles[new Random().nextInt(3)]);
+				log.info("USer created username {} password {} role {}", created.getUsername(), created.getPassword(),
+						userInRole.getRole().getName());
+				userInRoleRepository.save(userInRole);
+			} catch (Exception e) {
+				log.error("Error en el alta de un usuario: " + e.getMessage());
+			}
 		}
 
 	}

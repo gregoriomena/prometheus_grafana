@@ -44,11 +44,6 @@ public class UserService {
 	@Cacheable("users")
 	public User getUserByUsername(String username) {
 		log.info("Getting user by username {}", username);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 		return userRepository.findByUsername(username).orElseThrow(
 				() -> new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("User %s not found", username)));
 	}
