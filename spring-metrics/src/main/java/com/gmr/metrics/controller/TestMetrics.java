@@ -1,5 +1,7 @@
 package com.gmr.metrics.controller;
 
+import java.util.Random;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.instrument.MeterRegistry;
@@ -51,6 +54,17 @@ public class TestMetrics {
 	@Timed("gmenar.timer.metodo")
 	public ResponseEntity<String> timerMetodo(){
 		log.info("Medirá el tiempo de todo el método, no sólo del trozo de código que nos interese");
+		
+		if (new Random().nextInt(10) == 5) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not present");
+		}
+		if (new Random().nextInt(10) == 6) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Bad request");
+		}
+		if (new Random().nextInt(10) == 7) {
+			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Server error");
+		}
+		
 		return new ResponseEntity<String>("@gregoriomena", HttpStatus.OK);
 	}
 }

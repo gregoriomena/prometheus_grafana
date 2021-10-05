@@ -61,6 +61,7 @@
 					<li>26. Instalación de Postman</li>
 					<li><a href="#sec327">27. Generación de tráfico</a></li>
 					<li><a href="#sec328">28. Creando un Dashboard con Grafana</a></li>
+					<li><a href="#sec329">29. Generando peticiones con errores</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -202,6 +203,14 @@
 			<br /><img src="./notas/curso16.png" />
 			<br /><img src="./notas/curso17.png" />
 			<br /><img src="./notas/curso18.png" />
+		</span>
+		<span id="sec329">
+			<h3>3.29. Generando peticiones con errores</h3>
+			En el endpoint que estoy usando para obtener las métricas, he hecho que se generen excepciones de forma aleatorias, para mostrar en el dashboard cómo poder mostrar las peticiones agrupadas por estado:
+			<br /><img src="./notas/curso19.png" />
+			<br />Si nos fijamos en la métrica, además del tag status tenemos el outcome, que son grupos de estados. Podríamos agrupar por ellos:
+			<br /><img src="./notas/curso20.png" />
+			<br /><img src="./notas/curso21.png" />
 		</span>
 	</body>
 </html>
