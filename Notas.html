@@ -57,6 +57,7 @@
 					<li>22. Probando la integración con Prometheus</li>
 					<li><a href="#sec323">23. Leyendo las métricas personalizadas de Spring desde</a></li>
 					<li><a href="#sec324">24. Descargando e iniciando imagen de Grafana</a></li>
+					<li><a href="#sec325">25. Integrando Prometheus con Grafana</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -174,6 +175,14 @@
 			<h3>3.24. Descargando e iniciando imagen de Grafana</h3>
 			Si buscamos Grafana en <a href="https://hub.docker.com/r/grafana/grafana/">Docker Hub</a> encontraremos las instrucciones para instalarlo desde Docker: docker pull grafana/grafana
 			<br />En la <a href="https://grafana.com/docs/grafana/latest/installation/docker/">documentación de Grafana</a> encontramos cómo poder ejecutarlo: docker run -d -p 3000:3000 --name=grafana -e "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource" grafana/grafana
+		</span>
+		<span id="sec325">
+			<h3>3.25. Integrando Prometheus con Grafana</h3>
+			La contraseña por defecto para acceder a Grafana (http://localhost:3000/login) es admin/admin
+			<br />
+			Pasos para conectar Prometheus:
+			<br /><img src="./notas/curso09.png" />
+			"Add data source" -> Prometheus -> Indicar la URL: http://host.docker.internal:9090/ -> Save & Test
 		</span>
 	</body>
 </html>
