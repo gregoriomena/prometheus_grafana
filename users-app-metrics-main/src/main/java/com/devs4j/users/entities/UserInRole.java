@@ -1,5 +1,7 @@
 package com.devs4j.users.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +11,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+
 @Entity
 @Table(name = "user_in_role")
-public class UserInRole {
+public class UserInRole implements Serializable {
+
+	private static final long serialVersionUID = -8570355078206094623L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -19,6 +27,7 @@ public class UserInRole {
 
 	@ManyToOne
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
+	@JsonBackReference
 	private User user;
 
 	@ManyToOne

@@ -55,6 +55,6 @@ public class UserService {
 
 	public User getUserByUsernameAndPassword(String username, String password) {
 		return userRepository.findByUsernameAndPassword(username, password).orElseThrow(
-				() -> new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("User %d not found", username)));
+				() -> new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("User %s not found", username)));
 	}
 }
