@@ -47,7 +47,7 @@ public class UsersAppApplication implements ApplicationRunner {
 			roleRepository.save(role);
 		}
 
-		for (int i = 0; i < 100000; i++) {
+		for (int i = 0; i < 1000; i++) {
 			User user = new User();
 			user.setUsername(faker.name().username());
 			user.setPassword(faker.dragonBall().character());
