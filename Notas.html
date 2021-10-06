@@ -87,6 +87,7 @@
 				Sección 5: Uso del Prometheus Push Gateway
 				<ul>
 					<li><a href="#sec544">44. Introducción al Prometheus Push Gateway</a></li>
+					<li><a href="#sec545">45. Iniciando Push Gateway utilizando Docker</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -280,6 +281,12 @@
 		<span id="sec544">
 			<h3>5.44. Introducción al Prometheus Push Gateway</h3>
 			Push Gateway es una herramienta que proveé Prometheus que permite utilizar métricas con proyectos que no trabajan en un contexto web.
+		</span>
+		<span id="sec545">
+			<h3>5.45. Iniciando Push Gateway utilizando Docker</h3>
+			En el <a href="https://github.com/prometheus/pushgateway">repositorio Github</a> del proyecto tenemos las instrucciones.
+			- docker pull prom/pushgateway
+			- docker run -d -p 9091:9091 prom/pushgateway
 		</span>
 	</body>
 </html>
