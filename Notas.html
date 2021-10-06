@@ -79,7 +79,12 @@
 					<li>39. Combinación de dashboards genéricos con personalizados</li>
 					<li><a href="#sec440">40. Configuración de un notification channel</a></li>
 					<li><a href="#sec441">41. Configuración de una alerta en grafana</a></li>
+					<li>42. Probando una alerta en grafana</li>
+					<li>43. Volviendo a un estatus saludable</li>
 				</ul>
+			</li>
+			<li>
+				Sección 5: Uso del Prometheus Push Gateway
 			</li>
 		</ul>
 		
@@ -173,13 +178,13 @@
 		<span id="sec320">
 			<h3>3.20. Descargando Prometheus utilizando Docker</h3>
 			Si buscamos Prometheus en <a href="https://hub.docker.com/r/prom/prometheus/">Docker Hub</a> encontraremos las instrucciones para instalarlo desde Docker: docker pull prom/prometheus
-			<br />En la <a href="https://prometheus.io/docs/prometheus/latest/installation/">documentación de Prometheus</a> encontramos cómo poder ejecutarlo: docker run -p 9090:9090 prom/prometheus
+			<br />En la <a href="https://prometheus.io/docs/prometheus/latest/installation/">documentación de Prometheus</a> encontramos cómo poder ejecutarlo: docker run -d -p 9090:9090 prom/prometheus
 		</span>
 		<span id="sec321">
 			<h3>3.21. Conectando la imagen de Prometheus a nuestra aplicación</h3>
 			En el servidor de Prometheus (http://localhost:9090/) si vamos a Status->Configuration podremos obtener la configuración del servidor.
 			Copiando esta configuración, podemos crear el fichero prometheus.yml y adaptarlo para apuntar a nuestro servidor.
-			Teniendo este fichero, podemos arrancar Prometheus usando dicho fichero: docker run -p 9090:9090 -v C:/devel/fonts/cursoprometheusgrafana/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus -d
+			Teniendo este fichero, podemos arrancar Prometheus usando dicho fichero: docker run -d -p 9090:9090 -v C:/devel/fonts/cursoprometheusgrafana/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 			Al arrancar, no encontraremos nuestra métricas, primero debemos invocar al endpoint (por ejemplo http://localhost:8080/gmenar/metrics/timermetodo) y una vez ejecutado al menos una vez, ya aparecerá en Prometheus
 			<br /><img src="./notas/curso06.png" />
 		</span>
@@ -265,7 +270,7 @@
 			<br /><img src="./notas/curso34.png" />
 		</span>
 		<span id="sec441">
-			<h3>41. Configuración de una alerta en grafana</h3>
+			<h3>4.41. Configuración de una alerta en grafana</h3>
 			<br /><img src="./notas/curso35.png" />
 			<br /><img src="./notas/curso36.png" />
 		</span>
