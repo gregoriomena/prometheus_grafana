@@ -76,6 +76,8 @@
 					<li>36. Modificando script de prueba para get by id</li>
 					<li>37. Ejecutando pruebas y revisando dashboards</li>
 					<li>38. Creación de webhook básico de alertas</li>
+					<li>39. Combinación de dashboards genéricos con personalizados</li>
+					<li><a href="#sec440">40. Configuración de un notification channel</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -246,13 +248,20 @@
 			<br /><img src="./notas/curso27.png" />
 			<br /><img src="./notas/curso28.png" />
 		</span>
-		<span id="sec434">
+		<span id="sec435">
 			<h3>4.35. Creando script de prueba para el borrado</h3>
 			Es similar al caso anterior, pero aquí no reutilizamos el JSON entero que devuelve la petición como entrada, sino un atributo de este:
 			<br /><img src="./notas/curso29.png" />
 			<br /><img src="./notas/curso30.png" />
 			<br />También podríamos obtener todos los usuarios para no provocar errores si un ID concreto no existe:
 			<br /><img src="./notas/curso31.png" />
+		</span>
+		<span id="sec440">
+			<h3>4.40. Configuración de un notification channel</h3>
+			Podemos definir varios canales de notificaciones (correo, Telegram, llamada HTTP), pero para simplificar el ejemplo hemos elegido una llamada HTTP al endpoint de alerta que habíamos implementado:
+			<br /><img src="./notas/curso32.png" />
+			<br /><img src="./notas/curso33.png" />
+			<br /><img src="./notas/curso34.png" />
 		</span>
 	</body>
 </html>
